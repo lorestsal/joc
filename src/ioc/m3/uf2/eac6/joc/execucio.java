@@ -1,5 +1,5 @@
 /*Fitxer funcionsScrabble/execucio.java */
-package funcionsScrabble;
+package ioc.m3.uf2.eac6.joc;
 
 /**
  *
