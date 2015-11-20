@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package InterficieConsola;
+package ioc.m3.uf2.eac6.joc;
 
 /**
  *
