@@ -3,7 +3,7 @@ package ioc.m3.uf2.eac6.joc;
 
 /**
  *
- * @author Salva
+ * @author Salva Berlanga
  */
 public class execucio {
     /**
