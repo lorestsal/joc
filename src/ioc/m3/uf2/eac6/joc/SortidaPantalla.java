@@ -10,16 +10,7 @@ package InterficieConsola;
  * @author Lorenz Harfst
  */
 public class SortidaPantalla {
-    /**
-     * Mostra una array de integers per pantalla separada per pals (|)
-     * @param array 
-     */
-    void printArray(int[] array){
-         System.out.print("|");
-        for (int i = 0;i<array.length;i++){
-            System.out.print(" " + array[i] + " |");
-        }
-    }
+    
     /**
      * Mostra una array de Strings per pantalla separada per pals (|)
      * @param array 
