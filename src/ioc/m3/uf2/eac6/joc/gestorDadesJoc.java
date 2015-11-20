@@ -21,6 +21,8 @@ public class gestorDadesJoc {
     public static final double PUNTS_TORN_2=0.2;
     public static final double PUNTS_TORN_3=0.1;
     
+    DadesJoc dades = gestorDades();
+    
     /**
      * Funció per inicialitzar les dades del joc
      * 
@@ -32,11 +34,14 @@ public class gestorDadesJoc {
             * que equivaldria a 30 paraules d'un únic caracter fins completar
             * els 30 elements que te el dipòsit de lletres
             */
+            dades.torn=1;
             dades.paraulesProposades = new String[MIDA_DIPOSIT];
             dades.paraulesAmagades = new String[MIDA_DIPOSIT];
             dades.paraulesDescobertes = new String [MIDA_DIPOSIT];
             dades.dipositLletres = new char [MIDA_DIPOSIT];
+            
+            dades.puntuacio=0;
             return dades;
-    
-        }
+        
+}
 }
