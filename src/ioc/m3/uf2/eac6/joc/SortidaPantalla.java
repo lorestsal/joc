@@ -50,7 +50,9 @@ public class SortidaPantalla {
     void mostraTorn(int torn){
         //Mostrar text descriptiu
         //Mostrar torn
+        System.out.println("Torn: "+torn+" de "+MAX_TORNS);
     }
+    
     /**
      * Imprimeix per pantalla un text amb els punts
      * @param punts 
@@ -58,14 +60,21 @@ public class SortidaPantalla {
     void mostraPunts(int punts){
         //Mostrar text descriptiu
         //Mostrar punts del jugador
+        System.out.println("Punts aconseguits "+punts);
     }
+    
     /**
      * Mostra les paraules descobertes fins ara
-     * @param paraules 
+     * @param paraulesDescobertes es un array amb les paraules que l'usuari a trobat
      */
-    void mostraParaulesDescobertes(String[] paraules){
+    void mostraParaulesDescobertes(String[] paraulesDescobertes){
         //Mostrar text descriptiu
         //Mostrar l'array
+        System.out.println("Paraules descobertes:");
+        for (int x = 0;x<paraulesDescobertes.length;x++) {
+            System.out.print("       " + paraulesDescobertes[x] + ",");            
+        }
+       
     }
     /**
      * Mostra les lletres que el jugador pot utilitzar
