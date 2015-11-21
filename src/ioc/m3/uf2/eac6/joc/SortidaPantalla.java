@@ -4,6 +4,7 @@ import ioc.m3.uf2.biblioteca.*;
 /**
  *
  * @author Lorenz Harfst
+ * comentario salva
  */
 public class SortidaPantalla {
     ProcessaString processa = new ProcessaString();
