@@ -43,5 +43,5 @@ public class gestorDadesJoc {
             contenidorDades.puntuacio=0;
             return contenidorDades;
         
-}
+        }
 }
