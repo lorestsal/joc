@@ -29,19 +29,19 @@ public class gestorDadesJoc {
      * @return dades, és a dir, l'estructura de dades inicialitzada
      */
         public DadesJoc gestorDades() {
-            DadesJoc contenidorDates = new DadesJoc();
+            DadesJoc contenidorDades = new DadesJoc();
             /** La cadena de paraules proposades no podrà tenir més de 30 paraules
             * que equivaldria a 30 paraules d'un únic caracter fins completar
             * els 30 elements que te el dipòsit de lletres
             */
-            contenidorDates.torn=1;
-            contenidorDates.paraulesProposades = new String[MIDA_DIPOSIT];
-            contenidorDates.paraulesAmagades = new String[MIDA_DIPOSIT];
-            contenidorDates.paraulesDescobertes = new String [MIDA_DIPOSIT];
-            contenidorDates.dipositLletres = new char [MIDA_DIPOSIT];
+            contenidorDades.torn=1;
+            contenidorDades.paraulesProposades = new String[MIDA_DIPOSIT];
+            contenidorDades.paraulesAmagades = new String[MIDA_DIPOSIT];
+            contenidorDades.paraulesDescobertes = new String [MIDA_DIPOSIT];
+            contenidorDades.dipositLletres = new char [MIDA_DIPOSIT];
             
-            contenidorDates.puntuacio=0;
-            return contenidorDates;
+            contenidorDades.puntuacio=0;
+            return contenidorDades;
         
 }
 }
