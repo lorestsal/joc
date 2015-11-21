@@ -17,7 +17,7 @@ public class ProcessaString {
      * @param mida
      * @return String generat per caracters indicats.
      */
-    String generaString(char caracter, int llargadaString){
+    public String generaString(char caracter, int llargadaString){
         String stringGenerat ="";
         return stringGenerat;
     }
