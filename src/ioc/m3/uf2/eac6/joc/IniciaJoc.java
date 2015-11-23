@@ -1,5 +1,5 @@
-package ioc.m3.uf2;
-
+package ioc.m3.uf2.eac6.joc;
+import ioc.m3.uf2.biblioteca.*;
     /**
      * Realitza les operacions necessaries per inicialitzar el joc,
      * és a dir, extreure les paraules del diccionari i convertir-les
@@ -34,22 +34,8 @@ public class IniciaJoc {
      * @param   mida és la mida que tindrà l'array (constant MIDA_DIPOSIT)
      * @return  lletres es l'array de lletres que composaven les paraules
      */
-    public char[] extreureLletres(String [] paraules, int mida){
-        // Inicialitzem l'array de lletres amb mida màxima "mida"
-        char [] lletres = new char[mida];
-        // A CODIFICAR...  Extreure lletres del conjunt paraules i guardar-ho a l'array
-        
-        // Retornem array de lletres extretes
-        return lletres;
-    }
+
     
-   /**
-    * Rep un conjunt de lletres i les desordena
-    *
-    * @param lletres matriu de lletres que hem de desordenar
-    */ 
-   public void desordenarLletres(char [] lletres){
-        //A CODIFICAR... Desordenar lletres
-   }
+
    
 }
