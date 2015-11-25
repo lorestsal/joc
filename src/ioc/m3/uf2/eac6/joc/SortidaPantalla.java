@@ -79,15 +79,35 @@ public class SortidaPantalla {
         //Mostra descripció potser
         //Mostra linees maques again
     }
+    
+    public void mostraRetol(String[] linees, char caracter, int amplada){
+        Utilitats util = new Utilitats();
+        
+        //Mostra una linea de caracters equivalent a l'amplada
+        System.out.println(util.generaString(caracter, amplada));
+        for (int i = 0;i<linees.length;i++){
+            //Mostra dos caracters
+            System.out.print(caracter + "" + caracter);
+            //Calcula quants espais en blanc ha de posar
+            int amountOfSpaces = ((amplada - linees[i].length())/2)-2;
+            for (int i2 = 0;i2<amountOfSpaces;i2++) { System.out.print(" "); }
+            //Posa el missatge corresponent
+            System.out.print(linees[i]);
+            //Calcula quant espai queda per posar caracters
+            int spaceLeft = (amplada - (amountOfSpaces + linees[i].length() + 2));
+            //Posarà tants espais en blanc com queda d'espai MENYS 2 per posar els
+            // últims 2 caràcters (com a la linea 89)
+            for (int i2 = 0;i2<(spaceLeft-2);i2++){ System.out.print(" "); }
+            System.out.print(caracter + "" + caracter + "\n");
+        }
+        System.out.println(util.generaString(caracter, amplada));
+    }
 
     /**
      * Neteja la pantalla
      */
-    void netejaPantalla(){
-        
+    public void netejaPantalla(){
+        //Brut però visualment funciona perfectament.
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
-
-    
-    
- 
 }
