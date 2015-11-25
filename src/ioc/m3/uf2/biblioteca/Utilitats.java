@@ -165,11 +165,17 @@ public class Utilitats {
      * @return String generat per caracters indicats.
      */
     public String generaString(char caracter, int llargadaString){
-        String stringGenerat ="";
-        return stringGenerat;
+        String output = "";
+        
+        for (int i = 0;i < llargadaString; i++){
+            output += caracter;
+        }
+        
+        return output;
     }
     
     /**
+     * Segurament no es faci servir i s'elimini al final del projecte.
      * Comprova que el String (input) sigui igual o menor a midaMaxima.
      * En cas contrari se li borraràn caràcters
      * començant pel costat("esquerra", "dreta") indicat.
@@ -185,6 +191,7 @@ public class Utilitats {
     }
     
     /**
+     * Segurament no es faci servir i s'elimini al final del projecte.
      * Comprova que el String (input) sigui igual o menor a midaMaxima.
      * En cas contrari se li borraràn caràcters del final.
      * Si hi han caràcters borrats es trobaràn punts suspensius a la zona afectada.
