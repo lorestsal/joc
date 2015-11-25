@@ -1,10 +1,5 @@
-/*Fitxer funcionsScrabble/execucio.java */
 package ioc.m3.uf2.eac6.joc;
 
-/**
- *
- * @author Salva Berlanga
- */
 public class execucio {
     /**
      * Comprova que les lletres de les paraules coincideixen amb les lletres

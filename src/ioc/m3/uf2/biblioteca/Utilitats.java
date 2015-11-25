@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ioc.m3.uf2.biblioteca;
 import ioc.m3.uf2.eac6.joc.*;
 
 /**
  * Biblioteca amb funcions útils a utilitzar durant el programa
- * @author estelafranco
  */
 public class Utilitats {
     // Constnts per facilitar la implementació
@@ -116,7 +110,6 @@ public class Utilitats {
      * Actualitza el diposit de lletres (primer paràmetre), substituïnt cada 
      * una de les lletres contingudes a la col·lecció de paraules (segon
      * paràmetre) per espais en blanc.
-     * @param lletres és el diposit de lletres del joc
      * @param dades variable de tipus DadesJoc
      */
     public void actualitzarDiposit(DadesJoc dades){
@@ -166,11 +159,9 @@ public class Utilitats {
      */
     public String generaString(char caracter, int llargadaString){
         String output = "";
-        
         for (int i = 0;i < llargadaString; i++){
             output += caracter;
         }
-        
         return output;
     }
     
@@ -187,22 +178,10 @@ public class Utilitats {
      */
     String comprovaMidaString(String input, int midaMaxima, String costat){
         String retallat = "";
+        // falta desenvolupar
         return retallat;
     }
     
-    /**
-     * Segurament no es faci servir i s'elimini al final del projecte.
-     * Comprova que el String (input) sigui igual o menor a midaMaxima.
-     * En cas contrari se li borraràn caràcters del final.
-     * Si hi han caràcters borrats es trobaràn punts suspensius a la zona afectada.
-     * @param input
-     * @param midaMaxima
-     * @param costat
-     * @return String retallat (si és necessari).
-     */
-    String comprovaMidaString(String input, int midaMaxima){
-        String output ="";
-        return output;
-    }
+
     
 }

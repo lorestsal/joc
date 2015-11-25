@@ -7,8 +7,6 @@ import ioc.m3.uf2.biblioteca.*;
  */
 
 public class gestorDadesJoc {
-    DadesJoc dades = gestorDades();
-    
     /**
      * Funció per inicialitzar les dades del joc
      * 

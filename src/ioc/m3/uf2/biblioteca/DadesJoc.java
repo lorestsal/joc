@@ -1,11 +1,6 @@
 package ioc.m3.uf2.biblioteca;
 
 /**
- *
- * @author estela franco
- */
-
-/**
  * Classe amb l'estructura de dades variables relativa al joc de paraules barrejades
  * 
  */

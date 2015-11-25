@@ -4,12 +4,17 @@ import ioc.m3.uf2.biblioteca.*;
 public class SortidaPantalla {
     Utilitats util = new Utilitats();
     gestorDadesJoc gestor = new gestorDadesJoc();
+    String[] titol = {"LLETRES BARREJADES", "Quantes paraules ets capaç de trobar?"};
     
 
-    
+    /**
+     * Funció que mostra per pantalla les dades de la partida
+     * @param dades 
+     */
     public void carregaPantalla(DadesJoc dades){
+        // Buidem el congintut de la pantalla per carregar la pantalla del següent torn
         netejaPantalla();
-        mostraRetol();
+        mostraRetol(titol, '*', 60);
         mostraDadesPartida(dades);
         mostraDipositLletres(dades.dipositLletres);
         demanaParaules(dades);
@@ -22,7 +27,7 @@ public class SortidaPantalla {
      * @param dades variable de tipus DadesJoc amb les dades de la partida
      */
     public void demanaParaules(DadesJoc dades){
-        // falta crida a generaString();
+        System.out.println();
         if (dades.paraulesDescobertes.length == dades.paraulesAmagades.length){
             System.out.println("Enhorabona! Has trobat totes les paraules amagades. Partida finalitzada.");
         }
@@ -48,7 +53,8 @@ public class SortidaPantalla {
      * @param dipositLletres array amb les lletres disponibles
      */
     public void mostraDipositLletres(char[] dipositLletres){
-        // falta crida a generaString();
+        System.out.println(util.generaString('-', 65));
+        System.out.println();
         System.out.println("Lletres que pots utilitzar: ");
         util.pintaDiposit(dipositLletres);
         System.out.println();
@@ -61,7 +67,8 @@ public class SortidaPantalla {
      * @param dades variable de tipus DadesJoc amb la informació de partida
      */
     public void mostraDadesPartida(DadesJoc dades){
-        // falta crida a generaString();
+        System.out.println();
+        System.out.println(util.generaString('=', 17));
         util.mostraTorn(dades);
         util.mostrarPunts(dades);
         util.mostraParaulesDescobertes(dades);
@@ -69,32 +76,26 @@ public class SortidaPantalla {
                 
     }
     
-    /** 
-     * Mostra el rètol amb el nom del joc
-     * 
-     */
-    public void mostraRetol(){
-        //Mostra linees maques
-        //Mostra títol
-        //Mostra descripció potser
-        //Mostra linees maques again
-    }
     
-    public void mostraRetol(String[] linees, char caracter, int amplada){
-        Utilitats util = new Utilitats();
-        
+    /**
+     * Funció per mostrar el rètol del joc de paraules barrejades
+     * @param linies array amb les linies del rètol a mostrar
+     * @param caracter caracter amb el que es vol fer el marc del retol
+     * @param amplada mida de l'ample del retol
+     */
+    public void mostraRetol(String[] linies, char caracter, int amplada){
         //Mostra una linea de caracters equivalent a l'amplada
         System.out.println(util.generaString(caracter, amplada));
-        for (int i = 0;i<linees.length;i++){
+        for (int i = 0;i<linies.length;i++){
             //Mostra dos caracters
             System.out.print(caracter + "" + caracter);
             //Calcula quants espais en blanc ha de posar
-            int amountOfSpaces = ((amplada - linees[i].length())/2)-2;
+            int amountOfSpaces = ((amplada - linies[i].length())/2)-2;
             for (int i2 = 0;i2<amountOfSpaces;i2++) { System.out.print(" "); }
             //Posa el missatge corresponent
-            System.out.print(linees[i]);
+            System.out.print(linies[i]);
             //Calcula quant espai queda per posar caracters
-            int spaceLeft = (amplada - (amountOfSpaces + linees[i].length() + 2));
+            int spaceLeft = (amplada - (amountOfSpaces + linies[i].length() + 2));
             //Posarà tants espais en blanc com queda d'espai MENYS 2 per posar els
             // últims 2 caràcters (com a la linea 89)
             for (int i2 = 0;i2<(spaceLeft-2);i2++){ System.out.print(" "); }
