@@ -3,12 +3,14 @@ import ioc.m3.uf2.biblioteca.*;
 
 public class ExecucioJoc1 {
     
-    public void joc1(String[] paraules){
+    public void joc1(){
+        Diccionari dicc = new Diccionari();
         IniciaJoc1 inicia = new IniciaJoc1();
-        String paraula = inicia.obteParaulaAtzar(paraules);
-        int pistesConcedides = 0;
+        String paraula = inicia.obteParaulaAtzar(dicc.diccionari);
+        int pistesConcedides = 1;
         int bossaDePunts = 15;
         String pista = obtePistes(paraula, pistesConcedides);
+        
         
     }
    

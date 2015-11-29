@@ -5,6 +5,7 @@ import ioc.m3.uf2.biblioteca.*;
 
 public class IniciaJoc1 {
 
+    
     /**
      * Funció que obté una paraula a l'atzar del diccionari
      * @param paraules array de paraules on escollir
