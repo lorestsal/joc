@@ -1,5 +1,8 @@
 package ioc.m3.uf2.eac6;
+import ioc.m3.uf2.biblioteca.*;
 import ioc.m3.uf2.eac6.interficie.*;
+import ioc.m3.uf2.eac6.joc1.*;
+import ioc.m3.uf2.eac6.joc2.*;
 
 
 public class Menu {
@@ -17,16 +20,19 @@ public class Menu {
     
         public void inici()
         {
+            Diccionari paraules = new Diccionari();
             System.out.println("======================================================================");
             System.out.println("  Benvinguts a 'Els Jocs del Diccionari'");
             Sortida menu = new Sortida(); 
             Entrada opcio = new Entrada();
             menu.mostrarMenu(MENU_INCIAL);
-            int op=opcio.entrarEnter("Entra un enter");
+            int op=opcio.entrarEnter("Entra un enter: ");
             switch(op)
             {
                 case 1:
                     //Joc1();
+                    ExecucioJoc1 joc1 = new ExecucioJoc1();
+                    joc1.joc1(paraules.diccionari);
                 break;
                 case 2:
                     //Joc2();

@@ -47,20 +47,19 @@ public class IniciaJoc2 {
     
 
     /**
-     * ObtÃ© la posiciÃ³ d'una paraula de la colÂ·lecciÃ³ de paraules passades per 
-     * parÃ metre que compleixi:<br/>
-     * A) que la seva mida (nombfre de lletres) no sobrepassi la quantitat 
-     * indicada per midaMaxima.<br/>
-     * B) que no existeixi a la colÂ·lecciÃ§Ã³ de paraules passada en tercera posiciÃ³
-     * @param paraules Ã©s la colÂ·lecciÃ³ d'on escolir les paraules
-     * @param midaMaxima Ã©s la mida mÃ xima que la paruala pot fer.
-     * @param ignorarEntrades sÃ³n les paraules a ignorar. Ã‰s a dir, la paraula 
-     * escollida no pot estar continguda en aquesta colÂ·lecciÃ³. CaldrÃ  ignorar 
-     * les durant la selecciÃ³.
-     * @return la posiciÃ³ de la paraula seleccionada que compleix tot l'explicat.
+     * Obté la posició d'una paraula de la col·lecció de paraules passades per 
+     * paràmetre que compleixi:
+     * A) que la seva mida (nombre de lletres) no sobrepassi la quantitat 
+     * indicada per midaMaxima.
+     * B) que no existeixi a la col·lecció de paraules passada en tercera posició
+     * @param paraules array de paraules d'on escolir les paraules
+     * @param midaMaxima mida màxima que la paruala pot fer
+     * @param ignorarEntrades paraules a ignorar. 
+     * @return la posició de la paraula seleccionada que compleix tot l'explicat.
      */
     private int obtenirPosParaulaALAtzar(String[] paraules, int midaMaxima, String[] ignorarEntrades){
-        int posRandom = nanoRandom(paraules.length);
+        Utilitats util = new Utilitats();
+        int posRandom = util.nanoRandom(paraules.length);
         int i=posRandom;
         boolean volta=false;
         
@@ -78,26 +77,12 @@ public class IniciaJoc2 {
         return i;
     }
     
-    /**
-     * ObtÃ© i retorna un valor random de tipus enter, el qual oscilÂ·larÃ  entre 
-     * el valor zero (inclÃ²s) i el valor limitValue (no inclÃ²s).
-     * @param limitValue Ã©s el valor lÃ­mit superior del rang retornat per la funciÃ³
-     * @return 
-     */
-    private int nanoRandom(int limitValue){
-        long nano = System.nanoTime();
-        int ret = (int) (nano%limitValue);
-        if(ret<0){
-            ret*=-1;
-        }
-        return ret;
-    }
     
     /**
-     * Comprova si la paruala passada per parÃ metre es troba a la llista de 
-     * parules del segon parÃ metre
-     * @param paraula Ã©s paraula a cercar
-     * @param paraules Ã©s la llistra on cercar
+     * Comprova si la paruala passada per paràmetre es troba a la llista de 
+     * parules del segon paràmetre
+     * @param paraula paraula a cercar
+     * @param paraules llistra on cercar
      * @return 
      */
      private boolean hiHaParaula(String paraula, String[] paraules){
@@ -109,7 +94,5 @@ public class IniciaJoc2 {
         }
         return ret;
     }
-    
-
    
 }

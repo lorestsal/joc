@@ -3,7 +3,7 @@ package ioc.m3.uf2.biblioteca;
 
 public class Diccionari {
         // Array amb les paraules del diccionari pels jocs
-        String[] diccionari = {
+        public String[] diccionari = {
             "a",
             "abadessa",
             "abandonat",

@@ -1,6 +1,16 @@
 package ioc.m3.uf2.eac6.joc1;
+import ioc.m3.uf2.biblioteca.*;
 
 public class ExecucioJoc1 {
+    
+    public void joc1(String[] paraules){
+        IniciaJoc1 inicia = new IniciaJoc1();
+        String paraula = inicia.obteParaulaAtzar(paraules);
+        int pistesConcedides = 0;
+        int bossaDePunts = 15;
+        String pista = obtePistes(paraula, pistesConcedides);
+        
+    }
    
     /**
      * Funció que obté la cadena de text de la paraula a endevinar amb el nombre
@@ -28,8 +38,8 @@ public class ExecucioJoc1 {
      * @return 
      */
     public boolean esPotDonarNovaPista(String paraulaAEndevinar,
-                                        int pistesDonades,
-                                        int bossaDePunts){
+        int pistesDonades,
+        int bossaDePunts){
         boolean ret;
         ret = pistesDonades<paraulaAEndevinar.length()-1;
         ret = ret && bossaDePunts>2;

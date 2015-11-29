@@ -5,10 +5,10 @@ import ioc.m3.uf2.biblioteca.*;
 
 
 public class Eac6 {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Eac6 prg = new Eac6();
         prg.prova();
-    }
+    }*/
     
     /**
      * Funció de prova per comprovar la funcionalitat de les pantalles

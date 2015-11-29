@@ -175,12 +175,26 @@ public class Utilitats {
      * @param costat
      * @return String retallat (si és necessari).
      */
-    String comprovaMidaString(String input, int midaMaxima, String costat){
+    public String comprovaMidaString(String input, int midaMaxima, String costat){
         String retallat = "";
         // falta desenvolupar
         return retallat;
     }
     
+        /**
+     * Obté i retorna un valor random de tipus enter, el qual oscil·larà  entre 
+     * el valor zero (inclos) i el valor limitValue (no inclos).
+     * @param limitValue valor límit superior del rang retornat per la funció
+     * @return valor random
+     */
+    public int nanoRandom(int limitValue){
+        long nano = System.nanoTime();
+        int ret = (int) (nano%limitValue);
+        if(ret<0){
+            ret*=-1;
+        }
+        return ret;
+    }
 
     
 }
