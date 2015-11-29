@@ -1,5 +1,4 @@
 package ioc.m3.uf2.biblioteca;
-import ioc.m3.uf2.eac6.joc.*;
 
 /**
  * Biblioteca amb funcions útils a utilitzar durant el programa

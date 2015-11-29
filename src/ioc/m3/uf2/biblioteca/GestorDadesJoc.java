@@ -1,4 +1,4 @@
-package ioc.m3.uf2.eac6.joc;
+package ioc.m3.uf2.biblioteca;
 import ioc.m3.uf2.biblioteca.*;
 
 /**
@@ -6,7 +6,7 @@ import ioc.m3.uf2.biblioteca.*;
  * 
  */
 
-public class gestorDadesJoc {
+public class GestorDadesJoc {
     /**
      * Funció per inicialitzar les dades del joc
      * 

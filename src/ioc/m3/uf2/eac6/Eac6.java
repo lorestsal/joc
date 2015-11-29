@@ -1,6 +1,7 @@
 package ioc.m3.uf2.eac6;
+import ioc.m3.uf2.eac6.joc2.SortidaPantallaJoc2;
+import ioc.m3.uf2.biblioteca.GestorDadesJoc;
 import ioc.m3.uf2.biblioteca.*;
-import ioc.m3.uf2.eac6.joc.*;
 
 
 public class Eac6 {
@@ -13,8 +14,8 @@ public class Eac6 {
      * Funció de prova per comprovar la funcionalitat de les pantalles
      */
     void prova(){
-        SortidaPantalla partida = new SortidaPantalla();
-        gestorDadesJoc gestor = new gestorDadesJoc();
+        SortidaPantallaJoc2 partida = new SortidaPantallaJoc2();
+        GestorDadesJoc gestor = new GestorDadesJoc();
         DadesJoc dadesPartida = gestor.gestorDades();
         Utilitats utilitat = new Utilitats();
         // Creem string amagades amb paraules del diccionari que sumen 30 chars
@@ -22,7 +23,7 @@ public class Eac6 {
         // Assignem el valor a paraulesAmagades del tipus de dada DadesJoc
         dadesPartida.paraulesAmagades = amagades;
         // Inicialitzem diposit de lletres on guardarem les letres de les paraules
-        // char[] dipositLletres = new char[gestorDadesJoc.MIDA_DIPOSIT];
+        // char[] dipositLletres = new char[GestorDadesJoc.MIDA_DIPOSIT];
         // Extreiem lletres de les paraulesAmagades i les guardem al diposit
         dadesPartida.dipositLletres = utilitat.extreureLletres(dadesPartida.paraulesAmagades);
         // Desordenem les lletres de l'array

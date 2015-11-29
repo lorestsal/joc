@@ -1,4 +1,4 @@
-package ioc.m3.uf2.eac6.joc;
+package ioc.m3.uf2.eac6.joc2;
 import ioc.m3.uf2.biblioteca.*;
     /**
      * Realitza les operacions necessaries per inicialitzar el joc,
@@ -6,7 +6,7 @@ import ioc.m3.uf2.biblioteca.*;
      * en un dipòsit de lletres
      * 
      */
-public class IniciaJoc {
+public class IniciaJoc2 {
     
     /**
      * Realitza les operacions necessaries per inicialitzar el joc,

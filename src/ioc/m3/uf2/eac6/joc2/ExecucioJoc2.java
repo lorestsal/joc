@@ -1,6 +1,6 @@
-package ioc.m3.uf2.eac6.joc;
+package ioc.m3.uf2.eac6.joc2;
 
-public class execucio {
+public class ExecucioJoc2 {
     /**
      * Comprova que les lletres de les paraules coincideixen amb les lletres
      * valides del joc

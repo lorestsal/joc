@@ -1,9 +1,10 @@
-package ioc.m3.uf2.eac6.joc;
+package ioc.m3.uf2.eac6.joc2;
+import ioc.m3.uf2.biblioteca.GestorDadesJoc;
 import ioc.m3.uf2.biblioteca.*;
 
-public class SortidaPantalla {
+public class SortidaPantallaJoc2 {
     Utilitats util = new Utilitats();
-    gestorDadesJoc gestor = new gestorDadesJoc();
+    GestorDadesJoc gestor = new GestorDadesJoc();
     String[] titol = {"LLETRES BARREJADES", "Quantes paraules ets capaç de trobar?"};
     
 
