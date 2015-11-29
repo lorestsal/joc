@@ -4,7 +4,14 @@ import java.util.Scanner;
 
 public class Entrada {
     
-public int entrarEnter(String missatge){
+    /**
+     * Funció que retorna un nombre enter introduit per l'usuari i que comprova
+     * que el nombre introduit és un enter
+     * 
+     * @param missatge String de text explicatiu
+     * @return enter nombre enter introduit per l'usuari
+     */
+    public int entrarEnter(String missatge){
         Scanner scanner = new Scanner(System.in);
         int enter = 0;
         boolean correcte;
@@ -23,14 +30,24 @@ public int entrarEnter(String missatge){
         return enter;
     }
     
-    public String entrarText(String msg){
-        Scanner lector = new Scanner(System.in);
-        String txt="";
-        while (txt.length()==0) { 
-            System.out.println(msg);
-            txt=lector.nextLine();
-        }
-        return txt; 
+    /**
+     * Funció per recollir la cadena de text introduida per l'usuari que valida que la 
+     * cadena introduida no és una cadena buida
+     * 
+     * @param missatgeExplicatiu String de text explicatiu
+     * @return ret String de text amb la cadena introduida per l'usuari
+     */
+    public String entrarText(String missatgeExplicatiu){
+        Scanner scanner = new Scanner(System.in);
+        String ret;
+        do{
+            System.out.print(missatgeExplicatiu);        
+            ret = scanner.nextLine();
+            if(ret.length()==0){
+                System.out.println("Una cadena buida no és un entrada vàlida. Escriviu un text, si us plau.");
+            }
+        }while(ret.length()==0);
+        return ret; 
     }
 }
 
