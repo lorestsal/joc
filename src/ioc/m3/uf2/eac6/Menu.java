@@ -38,7 +38,6 @@ public class Menu {
                         //Joc2();
                     break; 
                     case 6:
-                        System.out.println("Fins la propera!");
                     break;
                     default:
                     {
@@ -54,6 +53,7 @@ public class Menu {
             op = opcio.entrarEnter("Entra un enter: ");    
             
             }
+            System.out.println("Fins la propera!");
             
         }
         
