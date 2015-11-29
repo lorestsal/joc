@@ -13,5 +13,4 @@ public class DadesJoc {
     public String [] paraulesAmagades;
     public String [] paraulesProposades;
     public char [] dipositLletres;
-    public String [] diccionari;
 }
