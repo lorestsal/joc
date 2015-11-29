@@ -1,6 +1,29 @@
 package ioc.m3.uf2.eac6.joc2;
 
+import ioc.m3.uf2.biblioteca.*;
+
 public class ExecucioJoc2 {
+    
+    public void joc2(String[] paraules){
+        IniciaJoc2 inicia = new IniciaJoc2();
+        GestorDadesJoc gestor = new GestorDadesJoc();
+        DadesJoc dadesPartida = gestor.gestorDades();
+        Diccionari diccio = new Diccionari();
+        SortidaPantallaJoc2 sortidaPantalla = new SortidaPantallaJoc2();
+       // Utilitats util = new Utilitats();
+        dadesPartida.paraulesAmagades=inicia.extreureParaulesDiccionari(diccio.diccionari, Utilitats.MIDA_DIPOSIT);
+        sortidaPantalla.carregaPantalla(dadesPartida);
+        boolean aux = validarProposta(dadesPartida.paraulesAmagades,dadesPartida.dipositLletres);
+        if (aux == false) {
+            dadesPartida.torn++;
+        } else {
+            
+        }
+       
+    }
+    
+    
+    
     /**
      * Comprova que les lletres de les paraules coincideixen amb les lletres
      * valides del joc
