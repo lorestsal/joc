@@ -17,7 +17,7 @@ public class IniciaJoc2 {
      * selecció de les paraules.
      * @return array de paraules seleccionades per jugar la partida
      */
-    private String[] extreureParaulesDiccionari(String[] diccionari, int totalLletres){
+    public String[] extreureParaulesDiccionari(String[] diccionari, int totalLletres){
         String[] paraulesObtingudes = new String[totalLletres];
         int nParaulesObtingudes=0;
         while(totalLletres>0){
