@@ -146,19 +146,37 @@ public class ExecucioJoc2 {
     /**
      * Actualitza els punts de la partida
      * 
-     * S’actualitzaran 	les puntuacions	
      * Es comptarà el número de lletres	
      * Es multiplicarà pel nombre de punts en funció del torn actual
+     * S'actualitzarà la puntuació
      * 
-     * @param punts nombre de punts acumulats durant el joc
+     * @param joc DadesJoc es pot passar com a paràmetre per actualitzar els punts
      * @param torn  nombre de torns consumits
-     * @param nombreLletresParaulaEncertada nombre de lletres de la paraula encertada
+     * @param paraulesEncertades array amb les paraules encertades
      */
-    public void actaulitzaPunts(int punts, int torn, int nombreLletresParaulaEncertada){
-        //A CODIFICAR... 
+    public void actaulitzaPunts(DadesJoc joc, int torn, String[] paraulesEncertades){
+        Double puntuacioGenerada = new Double(0.0);
+        Utilitats utilitat = new Utilitats();
+        int nombreLletres = utilitat.comptaLletresArray(paraulesEncertades);
         
+        switch (torn) {
+            case 1:
+               //0.5 punts per lletra
+               puntuacioGenerada = nombreLletres * 0.5;
+            case 2:
+               //0.2 punts per lletra
+               puntuacioGenerada = nombreLletres * 0.2;
+            default:
+               //0.1 punts per lletra
+               puntuacioGenerada = nombreLletres * 0.1;
+        }
+        
+        int output = puntuacioGenerada.intValue();
+        joc.puntuacio += output;
+    }
+    
+    public void seguentTorn(DadesJoc joc){
+        joc.torn += 1;
     }
     
 }
-
-
