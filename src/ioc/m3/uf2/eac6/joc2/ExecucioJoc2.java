@@ -154,21 +154,24 @@ public class ExecucioJoc2 {
      * @param torn  nombre de torns consumits
      * @param paraulesEncertades array amb les paraules encertades
      */
-    public void actaulitzaPunts(DadesJoc joc, int torn, String[] paraulesEncertades){
+    public void actaulitzaPunts(DadesJoc joc, String[] paraulesEncertades){
         Double puntuacioGenerada = new Double(0.0);
         Utilitats utilitat = new Utilitats();
         int nombreLletres = utilitat.comptaLletresArray(paraulesEncertades);
         
-        switch (torn) {
+        switch (joc.torn) {
             case 1:
                //0.5 punts per lletra
-               puntuacioGenerada = nombreLletres * 0.5;
+               puntuacioGenerada = nombreLletres * utilitat.PUNTS_TORN_1;
+               break;
             case 2:
                //0.2 punts per lletra
-               puntuacioGenerada = nombreLletres * 0.2;
+               puntuacioGenerada = nombreLletres * utilitat.PUNTS_TORN_2;
+               break;
             default:
                //0.1 punts per lletra
-               puntuacioGenerada = nombreLletres * 0.1;
+               puntuacioGenerada = nombreLletres * utilitat.PUNTS_TORN_3;
+               break;
         }
         
         int output = puntuacioGenerada.intValue();
