@@ -207,27 +207,26 @@ public class Utilitats {
         String[] ret = new String[salt];
         String aux = new String();
         String[] aux2 = new String[30];
-        
-        // char lletraAux;
-                
-        
+        paraulesProposades = paraulesProposades + ' ';
         for (int i=0;i<paraulesProposades.length();i++){
-            System.out.println(paraulesProposades.charAt(i));
-            //if (paraulesProposades.charAt(i)!=' ' || paraulesProposades.charAt(i)!="," || paraulesProposades.charAt(i)!="\t") {
-            if (paraulesProposades.charAt(i)!=' ') {
-                aux = aux + paraulesProposades.charAt(i);
-            } else {
-                aux2[salt]=aux;
-                salt++;
-                ret = redimensiona(aux2, salt);
-                aux="";
-            }    
+            switch(paraulesProposades.charAt(i)) {
+                case ' ':
+                case ',':
+                case '\t':
+                    if (aux == ""){
+                        break;
+                    } else {                        
+                        aux2[salt]=aux;
+                        salt++;
+                        ret = redimensiona(aux2, salt);
+                        aux="";
+                        break;
+                    }    
+                default:
+                    aux = aux + paraulesProposades.charAt(i); 
+            }
         }
-        //    prova per mostrar per pantalla el guardat
-        for (int k=0; k< salt; k++){
-            System.out.println(ret[k]);
-        }
-        return ret;
+        return toUpperCase(ret);
     }
     
     /**
