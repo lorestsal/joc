@@ -107,9 +107,9 @@ public class Utilitats {
     }
     
     /**
-     * Actualitza el diposit de lletres (primer paràmetre), substituïnt cada 
-     * una de les lletres contingudes a la col·lecció de paraules (segon
-     * paràmetre) per espais en blanc.
+     * Actualitza el dipositLletres, substituïnt cada 
+     * una de les lletres contingudes a la col·lecció de paraules (paraulesDescobertes) 
+     * per espais en blanc.
      * @param dades variable de tipus DadesJoc
      */
     public void actualitzarDiposit(DadesJoc dades){

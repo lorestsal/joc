@@ -11,34 +11,42 @@ public class ExecucioJoc2 {
         Diccionari diccio = new Diccionari();
         SortidaPantallaJoc2 sortidaPantalla = new SortidaPantallaJoc2();
         Utilitats util = new Utilitats();
+        String[] trobadesDiccionari = new String[Utilitats.MIDA_DIPOSIT];
         dadesPartida.paraulesAmagades=inicia.extreureParaulesDiccionari(diccio.diccionari, Utilitats.MIDA_DIPOSIT);
         dadesPartida.dipositLletres = util.extreureLletres(dadesPartida.paraulesAmagades);
-        sortidaPantalla.carregaPantalla(dadesPartida);
-        boolean aux = validarProposta(dadesPartida.paraulesAmagades,dadesPartida.dipositLletres);
-        if (aux == false) {
-            dadesPartida.torn++;
-        } else {
-            
-        }
+        util.obtenirLletresDesordenades(dadesPartida.dipositLletres);
+        // Comença la partida
+        do{
+            sortidaPantalla.carregaPantalla(dadesPartida);
+            boolean valid = validarProposta(dadesPartida.paraulesProposades,dadesPartida.dipositLletres);
+            if (!valid) {
+                seguentTorn(dadesPartida);
+                // mostrar missatge error (sortida pantalla?)
+            } else {
+                trobadesDiccionari = comparaArrays(dadesPartida.paraulesProposades,diccio.diccionari);
+                actualitzaPunts(dadesPartida, trobadesDiccionari);
+                String[] auxTrobades = new String[trobadesDiccionari.length];
+                auxTrobades = comparaArrays(trobadesDiccionari, dadesPartida.paraulesAmagades);
+                
+                // si hi han paraules trobades, les afegeix a l'array de dadesPartida.paraulesDescobertes
+                // afegirParaulesArray(auxTrobades,dadesPartida.paraulesDescobertes);
+                
+                util.actualitzarDiposit(dadesPartida);
+                seguentTorn(dadesPartida);
+            } 
+        } while (dadesPartida.paraulesDescobertes.length!=dadesPartida.paraulesAmagades.length && dadesPartida.torn < Utilitats.MAX_TORNS+1);
+        
        
     }
     
     
     
     /**
-     * Comprova que les lletres de les paraules coincideixen amb les lletres
-     * valides del joc
-     * Per cada paraula, verificar si hi ha correspondència injectiva entre les seves lletres 
-     * i les lletres del dipòsit encara no aparellades.
-     * Per cada lletra de la paraula a verificar trobar una lletra equivalent al dipòsit 
-     * que encara no hagi estat aparellada amb anterioritat a alguna altra lletra.
-     * Recórrer les lletres del dipòsit fins que trobem una lletra lliure (no associada a cap altra 
-     * lletra de la proposta) equivalent.
-     * Si es troba Marcar la lletra trobada com relacionada per impedir futures cerques.
-     * Si no es troba finalitzar la funció i emetre un veredicte negatiu i actualitzar torns.
-     * Si no s'ha emes ja un veredicte negatiu emetre'l positiu
+     * Comprova que les lletres de les paraules passades per paràmetre existeixen dins del 
+     * diposit passat en el segon paràmetre
+     * 
      * @param propostaParaules es l'array de paraules proposades per l'usuari
-     * @param dipositLletres es l'array de lletres válides de la partida
+     * @param dipositLletres es l'array de lletres vàlides de la partida
      * @return un boleà que indica si la proposta es vàlida
      */
     private boolean validarProposta(String[] propostaParaules, char[] dipositLletres){
@@ -92,12 +100,12 @@ public class ExecucioJoc2 {
     
     /**
      * Troba i retorna quines paraules, d'un conjunt de paraules (primer 
-     * paràmetre) son en un diccionari (segon paràmetre).
+     * paràmetre) son en un altre array (segon paràmetre).
      * @param paraules el conjunt de paraules a verificar
      * @param diccionari el diccionari on fer la verificació
      * @return el subconjunt de paraules que es troba dins el diccionari.
      */
-    private String[] comparaDiccionari(String[] paraules, String[] diccionari){
+    private String[] comparaArrays(String[] paraules, String[] diccionari){
         String[] ret = new String[paraules.length]; //com a màxim hi hauran paraules.length paraules correctes.
         int mida=0;
         for(int i=0; i<paraules.length; i++){
@@ -155,7 +163,7 @@ public class ExecucioJoc2 {
      * @param torn  nombre de torns consumits
      * @param paraulesEncertades array amb les paraules encertades
      */
-    public void actaulitzaPunts(DadesJoc joc, String[] paraulesEncertades){
+    public void actualitzaPunts(DadesJoc joc, String[] paraulesEncertades){
         Double puntuacioGenerada = new Double(0.0);
         Utilitats utilitat = new Utilitats();
         int nombreLletres = utilitat.comptaLletresArray(paraulesEncertades);
