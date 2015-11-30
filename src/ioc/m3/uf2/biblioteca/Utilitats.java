@@ -230,6 +230,21 @@ public class Utilitats {
         return ret;
     }
     
+    /**
+     * Retorna el nombre de lletres en una array
+     * @param array 
+     * @return 
+     */
+    public int comptaLletresArray (String[] array){
+        int output = 0;
+        
+        for (int i = 0;i<array.length;i++){
+            output += array[i].length();
+        }
+        
+        return output;
+    }
+    
      /**
      * Redimensiona la mida de la colecció de les paraules a la mida indicada 
      * en el paràmetre de la segona posició.
@@ -243,6 +258,16 @@ public class Utilitats {
             ret[i]=paraules[i];
         }
         return ret;
+    }
+    
+    public String[] toUpperCase(String[] input){
+        String[] output = new String[input.length];
+        
+        for (int i = 0;i<input.length;i++){
+            output[i] = input[i].toUpperCase();
+        }
+        
+        return output;
     }
     
 }
