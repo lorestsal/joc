@@ -91,7 +91,7 @@ public class SortidaPantallaJoc1 {
         mostraRetol(titol, '*', 60);
         mostraInstruccions(bossaDePunts, pista);
         String proposta = demanaParaula(bossaDePunts, pista, paraula);
-        return proposta;
+        return proposta.toUpperCase();
     }
     
     /**

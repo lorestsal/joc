@@ -18,6 +18,7 @@ public class IniciaJoc2 {
      * @return array de paraules seleccionades per jugar la partida
      */
     public String[] extreureParaulesDiccionari(String[] diccionari, int totalLletres){
+        Utilitats util = new Utilitats();
         String[] paraulesObtingudes = new String[totalLletres];
         int nParaulesObtingudes=0;
         while(totalLletres>0){
@@ -27,7 +28,8 @@ public class IniciaJoc2 {
             nParaulesObtingudes++;
         }
         
-        return redimensionaString(paraulesObtingudes, nParaulesObtingudes);
+        paraulesObtingudes = util.toUpperCase(redimensionaString(paraulesObtingudes, nParaulesObtingudes));
+        return paraulesObtingudes;
     }
        
     /**
