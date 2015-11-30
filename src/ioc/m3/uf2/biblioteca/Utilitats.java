@@ -1,10 +1,11 @@
 package ioc.m3.uf2.biblioteca;
-
+import java.util.Scanner;
+import ioc.m3.uf2.biblioteca.*;
 /**
  * Biblioteca amb funcions útils a utilitzar durant el programa
  */
 public class Utilitats {
-    // Constnts per facilitar la implementació
+    // Constants per facilitar la implementació
             public static final int MAX_TORNS=6;
             public static final int MIDA_DIPOSIT=30;
             public static final double PUNTS_TORN_1=0.5;
@@ -181,7 +182,7 @@ public class Utilitats {
         return retallat;
     }
     
-        /**
+    /**
      * Obté i retorna un valor random de tipus enter, el qual oscil·larà  entre 
      * el valor zero (inclos) i el valor limitValue (no inclos).
      * @param limitValue valor límit superior del rang retornat per la funció
@@ -195,6 +196,53 @@ public class Utilitats {
         }
         return ret;
     }
-
+    
+    /**
+    * Rep una cadena i retorna un Array amb les paraules
+    * @param paraulesProposades es un String de paraules
+    * @return ret retorna un array de paraules
+    */
+    public String[] extreureParaulesString(String paraulesProposades) {
+        int salt = 0;
+        String[] ret = new String[salt];
+        String aux = new String();
+        String[] aux2 = new String[30];
+        
+        // char lletraAux;
+                
+        
+        for (int i=0;i<paraulesProposades.length();i++){
+            System.out.println(paraulesProposades.charAt(i));
+            //if (paraulesProposades.charAt(i)!=' ' || paraulesProposades.charAt(i)!="," || paraulesProposades.charAt(i)!="\t") {
+            if (paraulesProposades.charAt(i)!=' ') {
+                aux = aux + paraulesProposades.charAt(i);
+            } else {
+                aux2[salt]=aux;
+                salt++;
+                ret = redimensiona(aux2, salt);
+                aux="";
+            }    
+        }
+        //    prova per mostrar per pantalla el guardat
+        for (int k=0; k< salt; k++){
+            System.out.println(ret[k]);
+        }
+        return ret;
+    }
+    
+     /**
+     * Redimensiona la mida de la colecció de les paraules a la mida indicada 
+     * en el paràmetre de la segona posició.
+     * @param paraules array de paraules a redimensionar
+     * @param mida la mida a la que es desitja la colÂ·lecció.
+     * @return retorna array de la mida correcta.
+     */
+    public String[] redimensiona(String[] paraules, int mida) {
+        String[] ret = new String[mida];
+        for(int i=0; i<mida && i<paraules.length; i++){
+            ret[i]=paraules[i];
+        }
+        return ret;
+    }
     
 }
