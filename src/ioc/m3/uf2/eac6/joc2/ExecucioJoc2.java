@@ -4,7 +4,7 @@ import ioc.m3.uf2.biblioteca.*;
 
 public class ExecucioJoc2 {
     
-    public void joc2(String[] paraules){
+    public void joc2(){
         IniciaJoc2 inicia = new IniciaJoc2();
         GestorDadesJoc gestor = new GestorDadesJoc();
         DadesJoc dadesPartida = gestor.gestorDades();
