@@ -1,10 +1,11 @@
 package ioc.m3.uf2.eac6.joc2;
 import ioc.m3.uf2.biblioteca.GestorDadesJoc;
 import ioc.m3.uf2.biblioteca.*;
+import java.util.Scanner;
 
 public class SortidaPantallaJoc2 {
     Utilitats util = new Utilitats();
-    GestorDadesJoc gestor = new GestorDadesJoc();
+    /*GestorDadesJoc gestor = new GestorDadesJoc();*/
     String[] titol = {"LLETRES BARREJADES", "Quantes paraules ets capaç de trobar?"};
     
 
@@ -39,9 +40,12 @@ public class SortidaPantallaJoc2 {
         System.out.println("Intenta escriure totes les paraules que puguis combinant les ");
         System.out.println("lletres. Escriu les paraules separades per espais i prem [Entrar] ");
         System.out.println("per finalitzar el torn.");
-        //int nombreParaules = 0;
-        //String[] paraules = new String[nombreParaules];
-        //Mostrar text demanant paraules
+        int nombreParaules = 0;
+        String aux;// = new String();
+        String[] paraules = new String[nombreParaules];
+        Scanner scanner = new Scanner(System.in);
+        aux=scanner.nextLine();
+        dades.paraulesProposades=util.extreureParaulesString(aux);
         //Registrar les paraules
         
         //i finalment retornar les paraules registrades
@@ -64,7 +68,6 @@ public class SortidaPantallaJoc2 {
     
     /**
      * Funció que mostra les dades relatives a la partida
-     * @param dades variable de tipus DadesJoc amb les variables de la partida
      * @param dades variable de tipus DadesJoc amb la informació de partida
      */
     public void mostraDadesPartida(DadesJoc dades){
