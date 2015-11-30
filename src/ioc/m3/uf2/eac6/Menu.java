@@ -35,7 +35,8 @@ public class Menu {
                         joc1.joc1();
                     break;
                     case 2:
-                        //Joc2();
+                        ExecucioJoc2 joc2 = new ExecucioJoc2();
+                        joc2.joc2();
                     break; 
                     case 6:
                     break;
