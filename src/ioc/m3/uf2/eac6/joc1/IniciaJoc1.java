@@ -15,7 +15,7 @@ public class IniciaJoc1 {
         Utilitats util = new Utilitats();
         int posRandom = util.nanoRandom(paraules.length);
         String paraula = paraules[posRandom];
-        return paraula;
+        return paraula.toUpperCase();
     }
     
 }

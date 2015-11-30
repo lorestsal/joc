@@ -10,8 +10,9 @@ public class ExecucioJoc2 {
         DadesJoc dadesPartida = gestor.gestorDades();
         Diccionari diccio = new Diccionari();
         SortidaPantallaJoc2 sortidaPantalla = new SortidaPantallaJoc2();
-       // Utilitats util = new Utilitats();
+        Utilitats util = new Utilitats();
         dadesPartida.paraulesAmagades=inicia.extreureParaulesDiccionari(diccio.diccionari, Utilitats.MIDA_DIPOSIT);
+        dadesPartida.dipositLletres = util.extreureLletres(dadesPartida.paraulesAmagades);
         sortidaPantalla.carregaPantalla(dadesPartida);
         boolean aux = validarProposta(dadesPartida.paraulesAmagades,dadesPartida.dipositLletres);
         if (aux == false) {
