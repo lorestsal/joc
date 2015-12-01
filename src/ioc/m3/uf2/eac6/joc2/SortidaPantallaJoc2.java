@@ -15,7 +15,7 @@ public class SortidaPantallaJoc2 {
      */
     public void carregaPantalla(DadesJoc dades){
         // Buidem el congintut de la pantalla per carregar la pantalla del següent torn
-        netejaPantalla();
+        util.netejaPantalla();
         String[] contingutRetol = {titol[0], titol[1], util.retornaTorn(dades), util.retornaPunts(dades), util.retornaParaulesDescobertes(dades)};
         mostraRetol(contingutRetol, '*', 100);
         mostraDipositLletres(dades.dipositLletres);
@@ -105,19 +105,6 @@ public class SortidaPantallaJoc2 {
             System.out.print(caracter + "" + caracter + "\n");
         }
         System.out.println(util.generaString(caracter, amplada));
-    }
-
-    /**
-     * Neteja la pantalla
-     */
-    public void netejaPantalla(){
-        //Brut però visualment funciona perfectament.
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        try {
-            Thread.sleep(500);         
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }       
     }
     
     public void propostaInvalida(){
