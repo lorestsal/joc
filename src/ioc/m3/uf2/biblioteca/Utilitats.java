@@ -23,11 +23,33 @@ public class Utilitats {
     }
     
     /**
+     * Retorna el una String descriptiva amb el torn i dades
+     * @param dadesJoc
+     * @return 
+     */
+    public String retornaTorn(DadesJoc dadesJoc){
+        String output = "Torn: " + dadesJoc.torn + " de " + MAX_TORNS;
+        
+        return output;
+    }
+    
+    /**
      * Mostra per pantalla la informació relativa als punts de la partida
      * @param dadesJoc estructura de tipus DadesJoc amb informació de la partida
      */
     public void mostrarPunts (DadesJoc dadesJoc){
         System.out.println("Puntuació: " + dadesJoc.puntuacio);
+    }
+    
+    /**
+     * Retorna la informació relativa als punts de la partida
+     * @param dadesJoc estructura de tipus DadesJoc amb informació de la partida
+     * @return dadesJoc.punts
+     */
+    public String retornaPunts (DadesJoc dadesJoc){
+        String output = "Puntuació: " + dadesJoc.puntuacio;
+        
+        return output;
     }
     
     /**
@@ -45,7 +67,25 @@ public class Utilitats {
         System.out.println();
         
     }
-
+    
+    /**
+     * Retorna un string amb les paraules descobertes
+     * @param dades
+     * @return 
+     */
+    public String retornaParaulesDescobertes(DadesJoc dades){
+        String output = "Paraules descobertes: ";
+        
+        if (dades.paraulesDescobertes[0]!=null){
+            for (int x = 0; x < dades.paraulesDescobertes.length-1; x++) {
+                output += dades.paraulesDescobertes[x] + ", ";            
+            }
+            output += dades.paraulesDescobertes[dades.paraulesDescobertes.length-1];            
+        }
+        
+        return output;
+    }
+	
      /**
      * Mostra les lletres que el jugador pot utilitzar
      * @param dipositLletres és l'array del dipòsit de lletres 
