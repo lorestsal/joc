@@ -332,5 +332,18 @@ public class Utilitats {
         }
         
         return output;
-    }   
+    }
+    
+    /**
+     * Neteja la pantalla
+     */
+    public void netejaPantalla(){
+        //Brut però visualment funciona perfectament.
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        try {
+            Thread.sleep(500);         
+        } catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }       
+    }
 }
