@@ -45,7 +45,12 @@ public class ExecucioJoc2 {
             }
             // actualitzem torn
             seguentTorn(dadesPartida);
-        } 
+        }
+        // Si has endevinat totes les lletres
+        if (dadesPartida.paraulesDescobertes.length!=dadesPartida.paraulesAmagades.length){
+            sortidaPantalla.partidaGuanyada();
+        } else { // Si no queden torns
+            sortidaPantalla.partidaPerduda();
         
        
     }

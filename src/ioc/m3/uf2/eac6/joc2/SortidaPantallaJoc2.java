@@ -141,4 +141,24 @@ public class SortidaPantallaJoc2 {
         String entrar = scanner.nextLine();
     }
     
+    /**
+     * Funció que mostra missatge en cas de partida finalitzada per esgotar torns
+     */
+    public void partidaPerduda(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ohh! Has esgotat tots els torns. Partida finalitzada.");
+        System.out.print("Prem [ENTRAR] per continuar");
+        String entrar = scanner.nextLine();
+    }
+    
+    /**
+     * Funció que mostra missagte en cas de partida finalitzada per endevinar paraules
+     */
+    public void partidaGuanyada(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enhorabona! Has trobat totes les paraules amagades. Partida finalitzada.");
+        System.out.print("Prem [ENTRAR] per continuar");
+        String entrar = scanner.nextLine();
+    }
+    
 }
