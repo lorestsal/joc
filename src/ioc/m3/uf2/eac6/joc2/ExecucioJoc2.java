@@ -16,25 +16,37 @@ public class ExecucioJoc2 {
         dadesPartida.dipositLletres = util.extreureLletres(dadesPartida.paraulesAmagades);
         util.obtenirLletresDesordenades(dadesPartida.dipositLletres);
         // Comença la partida
-        do{
+        while (dadesPartida.paraulesDescobertes.length!=dadesPartida.paraulesAmagades.length && dadesPartida.torn < Utilitats.MAX_TORNS){
             sortidaPantalla.carregaPantalla(dadesPartida);
             boolean valid = validarProposta(dadesPartida.paraulesProposades,dadesPartida.dipositLletres);
-            if (!valid) {
-                seguentTorn(dadesPartida);
-                // mostrar missatge error (sortida pantalla?)
-            } else {
+            // Si la proposta és vàlida
+            if (valid) {
                 trobadesDiccionari = comparaArrays(dadesPartida.paraulesProposades,diccio.diccionari);
+                // actualitzem punts
                 actualitzaPunts(dadesPartida, trobadesDiccionari);
                 String[] auxTrobades = new String[trobadesDiccionari.length];
                 auxTrobades = comparaArrays(trobadesDiccionari, dadesPartida.paraulesAmagades);
                 
                 // si hi han paraules trobades, les afegeix a l'array de dadesPartida.paraulesDescobertes
-                // afegirParaulesArray(auxTrobades,dadesPartida.paraulesDescobertes);
-                
+                if (dadesPartida.paraulesDescobertes[0]!=null){
+                    dadesPartida.paraulesDescobertes = util.juntaArrays(auxTrobades,dadesPartida.paraulesDescobertes);
+                } else {
+                    dadesPartida.paraulesDescobertes = util.redimensiona(auxTrobades, auxTrobades.length);
+                }
+                //  Actualitzem diposit
                 util.actualitzarDiposit(dadesPartida);
-                seguentTorn(dadesPartida);
-            } 
-        } while (dadesPartida.paraulesDescobertes.length!=dadesPartida.paraulesAmagades.length && dadesPartida.torn < Utilitats.MAX_TORNS+1);
+                
+            } else {
+                // missatge de que la proposta no és vàlida --> funció a desenvolupar!!
+                System.out.println("Has introduit paraules que no es poden formar amb les lletres del diposit.");
+                System.out.println("Prem [ENTRAR] per continuar");
+                
+            }
+            // actualitzem torn
+            seguentTorn(dadesPartida);
+
+            
+        } 
         
        
     }
