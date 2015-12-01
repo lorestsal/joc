@@ -88,6 +88,7 @@ public class SortidaPantallaJoc1 {
      * @return paraula introduida per l'usuari per endevinar la paraula amagada
      */
     public String carregaPantalla(int bossaDePunts, String pista, String paraula){
+        util.netejaPantalla();
         mostraRetol(titol, '*', 60);
         mostraInstruccions(bossaDePunts, pista);
         String proposta = demanaParaula(bossaDePunts, pista, paraula);
