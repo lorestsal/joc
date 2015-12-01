@@ -1,6 +1,7 @@
 package ioc.m3.uf2.eac6.joc2;
 
 import ioc.m3.uf2.biblioteca.*;
+import java.util.Scanner;
 
 public class ExecucioJoc2 {
     
@@ -18,10 +19,12 @@ public class ExecucioJoc2 {
         // Comença la partida
         while (dadesPartida.paraulesDescobertes.length!=dadesPartida.paraulesAmagades.length && dadesPartida.torn < Utilitats.MAX_TORNS){
             sortidaPantalla.carregaPantalla(dadesPartida);
-            boolean esAlDiposit = validarProposta(dadesPartida.paraulesProposades,dadesPartida.dipositLletres);
-            boolean esAlDiccionari = esAlDiccionari(dadesPartida.paraulesProposades,diccio.diccionari);
+            //Ho deixo aqui per si de cas.
+            //boolean esAlDiposit = validarProposta(dadesPartida.paraulesProposades,dadesPartida.dipositLletres);
+            //boolean esAlDiccionari = esAlDiccionari(dadesPartida.paraulesProposades,diccio.diccionari);
+            boolean esParaulaAmagada = esParaulaAmagada(dadesPartida.paraulesProposades, dadesPartida.paraulesAmagades);
             // Si la proposta és vàlida
-            if (esAlDiposit && esAlDiccionari) {
+            if (esParaulaAmagada) {
                 trobadesDiccionari = comparaArrays(dadesPartida.paraulesProposades,diccio.diccionari);
                 // actualitzem punts
                 actualitzaPunts(dadesPartida, trobadesDiccionari);
@@ -29,6 +32,7 @@ public class ExecucioJoc2 {
                 auxTrobades = comparaArrays(trobadesDiccionari, dadesPartida.paraulesAmagades);
                 
                 // si hi han paraules trobades, les afegeix a l'array de dadesPartida.paraulesDescobertes
+                
                 if (dadesPartida.paraulesDescobertes[0]!=null){
                     dadesPartida.paraulesDescobertes = util.juntaArrays(auxTrobades,dadesPartida.paraulesDescobertes);
                 } else {
@@ -36,12 +40,12 @@ public class ExecucioJoc2 {
                 }
                 //  Actualitzem diposit
                 util.actualitzarDiposit(dadesPartida);
-                // Missatge amb les paraules trobades al diccionari
-                sortidaPantalla.paraulesValides(trobadesDiccionari);
-            } else if(!esAlDiposit){ // Si les paraules no son al diposit
-                sortidaPantalla.propostaInvalida();
-            } else { // Si les paraules son al diposit però no al diccionari
-                sortidaPantalla.propostaNula();
+            } else {
+                // missatge de que la proposta no és vàlida --> funció a desenvolupar!!
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("La teva paraula no es valida.");
+                System.out.print("Prem [ENTRAR] per continuar");
+                String entrar = scanner.nextLine();    
             }
             // actualitzem torn
             seguentTorn(dadesPartida);
@@ -130,33 +134,6 @@ public class ExecucioJoc2 {
         }
         ret = redimensionaColleccioStrings(ret, mida);
         return ret;
-    }
-    
-    /**
-     * Comprova si algun dels elements de l'array del primer paràmetre existeix a l'array del segon paràmetre
-     * @param paraules array amb paraules a comprovar en el segon parametre
-     * @param diccionari array amb les paraules amb les que es comparen les del primer parametre
-     * @return true si existeix algun element del primer al segon paràmentre o false en cas de que no.
-     */
-    private boolean esAlDiccionari(String[] paraules, String[] diccionari){
-        String[] ret = new String[paraules.length]; //com a màxim hi hauran paraules.length paraules correctes.
-        int mida=0;
-        boolean esAlDiccionari = false;
-        for(int i=0; i<paraules.length; i++){
-            if(existeixParaula(paraules[i], diccionari)){
-                ret[mida]=paraules[i];
-                mida++;
-            }
-        }
-        
-        ret = redimensionaColleccioStrings(ret, mida);
-        if (ret.length < 1){
-            esAlDiccionari = false;            
-        } else {
-            esAlDiccionari = true;
-        }
-        
-        return esAlDiccionari;
     }
     
     /**
