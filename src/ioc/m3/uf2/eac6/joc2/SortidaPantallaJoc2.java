@@ -115,4 +115,30 @@ public class SortidaPantallaJoc2 {
         //Brut però visualment funciona perfectament.
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
+    
+    public void propostaInvalida(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ohhh! Has introduit paraules que no es poden formar amb les lletres del diposit.");
+        System.out.print("Prem [ENTRAR] per continuar");
+        String entrar = scanner.nextLine();
+    }
+    
+    public void propostaNula(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ohhh! Les paraules introduides no son al diccionari.");
+        System.out.print("Prem [ENTRAR] per continuar");
+        String entrar = scanner.nextLine();
+    }
+    
+    public void paraulesValides(String[] paraules){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Molt bé! Has format les següents paraules vàlides: ");
+        for(int i=0; i<paraules.length; i++){
+            System.out.print(paraules[i]+" ");
+        }        
+        System.out.println();
+        System.out.print("Prem [ENTRAR] per continuar");
+        String entrar = scanner.nextLine();
+    }
+    
 }

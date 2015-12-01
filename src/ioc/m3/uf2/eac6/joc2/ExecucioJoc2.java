@@ -36,17 +36,15 @@ public class ExecucioJoc2 {
                 }
                 //  Actualitzem diposit
                 util.actualitzarDiposit(dadesPartida);
-                
-            } else {
-                // missatge de que la proposta no és vàlida --> funció a desenvolupar!!
-                System.out.println("Has introduit paraules que no es poden formar amb les lletres del diposit.");
-                System.out.println("Prem [ENTRAR] per continuar");
-                
+                // Missatge amb les paraules trobades al diccionari
+                sortidaPantalla.paraulesValides(trobadesDiccionari);
+            } else if(!esAlDiposit){ // Si les paraules no son al diposit
+                sortidaPantalla.propostaInvalida();
+            } else { // Si les paraules son al diposit però no al diccionari
+                sortidaPantalla.propostaNula();
             }
             // actualitzem torn
             seguentTorn(dadesPartida);
-
-            
         } 
         
        
@@ -90,12 +88,10 @@ public class ExecucioJoc2 {
     }
     /**
      * Indica si la lletra de la paraula passada en el primer 
-     * parÃ metre es troba continguda dins el diposit (segon parametre).
+     * paràmetre es troba continguda dins el segon parametre.
      * @param lletra la lletra a comprovar
-     * @param diposit el diposit de lletres on comprovar     
-     * @param amagades un array de valors lògics que indica si anteriorment
-     * ja s'ha trobat una correspondencia amb la lletra que es troba a la mateixa 
-     * posició que el valor i per tant no es pot considerar un lletra vàlida.
+     * @param diposit array de lletres on comprovar     
+     * @param amagades un array de valors lògics
      * @return si la comprovació és o no correcta.
      */
     private boolean validaLletra(char lletra, char[] diposit, boolean[] amagades){
@@ -127,11 +123,16 @@ public class ExecucioJoc2 {
                 mida++;
             }
         }
-        
         ret = redimensionaColleccioStrings(ret, mida);
         return ret;
     }
     
+    /**
+     * Comprova si algun dels elements de l'array del primer paràmetre existeix a l'array del segon paràmetre
+     * @param paraules array amb paraules a comprovar en el segon parametre
+     * @param diccionari array amb les paraules amb les que es comparen les del primer parametre
+     * @return true si existeix algun element del primer al segon paràmentre o false en cas de que no.
+     */
     private boolean esAlDiccionari(String[] paraules, String[] diccionari){
         String[] ret = new String[paraules.length]; //com a màxim hi hauran paraules.length paraules correctes.
         int mida=0;
