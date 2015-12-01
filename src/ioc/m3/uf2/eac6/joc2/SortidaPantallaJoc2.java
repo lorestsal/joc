@@ -57,7 +57,7 @@ public class SortidaPantallaJoc2 {
      * @param dipositLletres array amb les lletres disponibles
      */
     public void mostraDipositLletres(char[] dipositLletres){
-        System.out.println(util.generaString('-', 65));
+        //System.out.println(util.generaString('-', 65));
         System.out.println();
         System.out.println("Lletres que pots utilitzar: ");
         util.pintaDiposit(dipositLletres);
