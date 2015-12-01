@@ -18,9 +18,10 @@ public class ExecucioJoc2 {
         // Comença la partida
         while (dadesPartida.paraulesDescobertes.length!=dadesPartida.paraulesAmagades.length && dadesPartida.torn < Utilitats.MAX_TORNS){
             sortidaPantalla.carregaPantalla(dadesPartida);
-            boolean valid = validarProposta(dadesPartida.paraulesProposades,dadesPartida.dipositLletres);
+            boolean esAlDiposit = validarProposta(dadesPartida.paraulesProposades,dadesPartida.dipositLletres);
+            boolean esAlDiccionari = esAlDiccionari(dadesPartida.paraulesProposades,diccio.diccionari);
             // Si la proposta és vàlida
-            if (valid) {
+            if (esAlDiposit && esAlDiccionari) {
                 trobadesDiccionari = comparaArrays(dadesPartida.paraulesProposades,diccio.diccionari);
                 // actualitzem punts
                 actualitzaPunts(dadesPartida, trobadesDiccionari);
@@ -130,7 +131,28 @@ public class ExecucioJoc2 {
         ret = redimensionaColleccioStrings(ret, mida);
         return ret;
     }
-
+    
+    private boolean esAlDiccionari(String[] paraules, String[] diccionari){
+        String[] ret = new String[paraules.length]; //com a màxim hi hauran paraules.length paraules correctes.
+        int mida=0;
+        boolean esAlDiccionari = false;
+        for(int i=0; i<paraules.length; i++){
+            if(existeixParaula(paraules[i], diccionari)){
+                ret[mida]=paraules[i];
+                mida++;
+            }
+        }
+        
+        ret = redimensionaColleccioStrings(ret, mida);
+        if (ret.length < 1){
+            esAlDiccionari = false;            
+        } else {
+            esAlDiccionari = true;
+        }
+        
+        return esAlDiccionari;
+    }
+    
     /**
      * Comprova si la paraula passada en primer lloc és dins el diccionari 
      * (segon paràmetre).
