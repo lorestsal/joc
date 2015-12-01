@@ -259,14 +259,38 @@ public class Utilitats {
         return ret;
     }
     
-    public String[] toUpperCase(String[] input){
-        String[] output = new String[input.length];
+    /** 
+     * Converteix en majúscules una array
+     * @param array Array to be uppercased
+     * @return 
+     */
+    public String[] toUpperCase(String[] array){
+        String[] output = new String[array.length];
         
-        for (int i = 0;i<input.length;i++){
-            output[i] = input[i].toUpperCase();
+        for (int i = 0;i<array.length;i++){
+            output[i] = array[i].toUpperCase();
         }
         
         return output;
     }
     
+    /**
+     * Junta dos arrays.
+     * @param array1 primera array
+     * @param array2 seguent array
+     * @return array1 + array2
+     */
+    public String[] juntaArrays(String[] array1, String[] array2){
+        String[] output = new String[array1.length + array2.length];
+        int aux = 0;
+        
+        for (int i = 0;i<array1.length;i++){
+            output[i] = array1[i];
+        }
+        for (int i = array1.length;i<output.length;i++){
+            output[i] = array2[aux]; aux++;
+        }
+        
+        return output;
+    }
 }
