@@ -59,8 +59,6 @@ public class ExecucioJoc2 {
        
     }
     
-    
-    
     /**
      * Comprova que les lletres de les paraules passades per paràmetre existeixen dins del 
      * diposit passat en el segon paràmetre
@@ -134,6 +132,17 @@ public class ExecucioJoc2 {
         }
         ret = redimensionaColleccioStrings(ret, mida);
         return ret;
+    }
+    
+    private boolean esParaulaAmagada(String[] propostes, String[] amagades){
+        String[] paraulesGuanyadores = comparaArrays(propostes, amagades);
+        boolean esParaulaAmagada = false;
+        
+        if (paraulesGuanyadores.length > 0){
+            esParaulaAmagada = true;
+        }
+        
+        return esParaulaAmagada;
     }
     
     /**
